@@ -146,6 +146,8 @@
 
   /* ---------- guides ---------- */
   .filters{display:flex;gap:.5rem;flex-wrap:wrap;margin-bottom:1.1rem}
+.filters input[type="search"]{flex:1 1 240px;min-width:220px;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:var(--radius);padding:.55rem .8rem;font-size:.95rem;font-family:inherit}
+.noresults{color:var(--ink-soft);margin:.2rem 0 1rem}
   .chip{
     font:inherit;font-weight:600;font-size:.95rem;cursor:pointer;
     background:var(--surface);color:var(--ink);border:1.5px solid var(--line);
@@ -328,7 +330,7 @@
   <section id="categories" class="wrap">
     <div class="sec-head">
       <h2>What ShedWorks covers</h2>
-      <p>Every corner of the shed, garage and yard. Twelve guides are live below; cleaning guides are on the bench now.</p>
+      <p>Every corner of the shed, garage and yard. Thirteen guides are live below; cleaning guides are on the bench now.</p>
     </div>
     <div class="cat-grid">
       <a class="cat" href="#guide-drill">
@@ -378,14 +380,16 @@
   <section id="guides" class="wrap">
     <div class="sec-head">
       <h2>The guides</h2>
-      <p>Twelve guides, same format every time: quick picks up top, who should buy and who should skip, what actually matters, and a straight verdict.</p>
+      <p>Thirteen guides, same format every time: quick picks up top, who should buy and who should skip, what actually matters, and a straight verdict.</p>
     </div>
     <div class="filters" role="group" aria-label="Filter guides by category">
       <button class="chip" data-filter="all" aria-pressed="true">All guides</button>
       <button class="chip" data-filter="tools" aria-pressed="false">Tools</button>
       <button class="chip" data-filter="lawn" aria-pressed="false">Lawn &amp; Garden</button>
       <button class="chip" data-filter="solar" aria-pressed="false">Solar &amp; Power</button>
+      <input id="q" type="search" placeholder="Search guides and products — try “Honda”, “generator”, “welding”…" aria-label="Search guides and products" />
     </div>
+    <p class="noresults" id="noresults" hidden>No guides match that search. Try a product name like “Honda”, “generator”, or “welding”.</p>
 
     <!-- GUIDE 1: DRILL -->
     <article class="guide" id="guide-drill" data-cat="tools">
@@ -669,10 +673,150 @@
       </div>
     </article>
 
-    <!-- GUIDE 4: ECHO BATTERY YARD TOOLS -->
+    <!-- GUIDE 4: GAS GENERATOR -->
+    <article class="guide" id="guide-generator" data-cat="solar">
+      <div class="guide-head">
+        <p class="guide-kicker">Solar &amp; Power · Guide 04</p>
+        <h3>Best Gas Generator for Home Backup: Inverter vs. Conventional, Sized Right</h3>
+        <p class="intro">A power station is the quiet answer for a few hours. A gas generator is the answer for a few days — and for the loads a battery box cannot touch, like a well pump or a full-size freezer through a long outage. This is the other half of the question in Guide 03: when the station runs dry, the generator takes over. Two decisions matter most — inverter or conventional, and how many watts you actually need — and both are simpler than the listings make them sound.</p>
+      </div>
+      <div class="guide-body">
+        <p class="cards-title">Quick picks</p>
+        <div class="cards">
+          <div class="card">
+            <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Inverter generator</span></div>
+            <div class="card-body">
+              <h4>Honda EU2200i<span class="badge">Quietest &amp; most trusted</span></h4>
+              <p class="model">Honda EU series · inverter generator</p>
+              <p class="bestfor">Best for: quiet backup, camping, RVs</p>
+              <p class="why"><b>Why we like it:</b> The benchmark every other inverter gets judged against: 48–57 dBA, CO-MINDER auto shutoff, 47 pounds, and an engine with a reputation for starting on the first pull for decades. 1,800 running watts and 2,200 starting watts cover a fridge, lights, and phones with room to spare, and two units pair together when you need more.</p>
+              <div class="price"><b>~$1,199</b><span>Approx. price, Nov 2026 — checked Nov 22, 2026. Re-check on Amazon.</span></div>
+              <a class="buy-btn" href="https://www.amazon.com/s?k=Honda+EU2200i+inverter+generator&amp;tag=shedworks-20" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Inverter generator</span></div>
+            <div class="card-body">
+              <h4>Champion 4500-Watt Dual Fuel Inverter<span class="badge">Best dual-fuel value</span></h4>
+              <p class="model">Champion 201319 · inverter generator</p>
+              <p class="bestfor">Best for: home backup on gas or propane</p>
+              <p class="why"><b>Why we like it:</b> 4,500 starting watts and 3,500 running watts on gas, and it also runs on propane — 14 hours on a tank of gas, up to 21 hours on a 20-pound propane tank at a quarter load. Electric start, CO Shield auto shutoff, and a parallel kit that lets you double up later. The most generator most homes need, at a working price.</p>
+              <div class="price"><b>~$984</b><span>Approx. price, Nov 2026 — checked Nov 21, 2026. Re-check on Amazon.</span></div>
+              <a class="buy-btn" href="https://www.amazon.com/s?k=Champion+4500+watt+dual+fuel+inverter+generator&amp;tag=shedworks-20" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Inverter generator</span></div>
+            <div class="card-body">
+              <h4>Westinghouse iGen4500<span class="badge">Best for RVs</span></h4>
+              <p class="model">Westinghouse iGen series · inverter generator</p>
+              <p class="bestfor">Best for: RVs and longer outages</p>
+              <p class="why"><b>Why we like it:</b> 3,700 running watts and 4,500 starting watts with a 30-amp RV outlet, push-button electric start plus a wireless remote fob, and a 3.4-gallon tank that runs up to 18 hours at a quarter load — all at 52 dBA. The RV pick in this guide. One honest catch: the base iGen4500 has no carbon monoxide sensor — the CO-sensor version is the separate iGen4500c, so check the listing before you buy.</p>
+              <div class="price"><b>~$849</b><span>Approx. price, Nov 2026 — checked Nov 22, 2026. Re-check on Amazon.</span></div>
+              <a class="buy-btn" href="https://www.amazon.com/s?k=Westinghouse+iGen4500+inverter+generator&amp;tag=shedworks-20" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Inverter generator</span></div>
+            <div class="card-body">
+              <h4>WEN 56380i<span class="badge">Best value inverter</span></h4>
+              <p class="model">WEN 56380i · inverter generator</p>
+              <p class="bestfor">Best for: most watts per dollar</p>
+              <p class="why"><b>Why we like it:</b> 3,400 running watts and 3,800 starting watts with electric start, a fuel shutoff that keeps the carburetor clean, and a 30-amp RV outlet — at the lowest price per running watt of any inverter here. 57 dBA, 99 pounds, and 8.5 hours at half load. One honest catch: the listing names no CO shutoff sensor, so run it well away from the house and keep a CO alarm inside.</p>
+              <div class="price"><b>~$699.99</b><span>Approx. price, Nov 2026 — checked Nov 22, 2026. Re-check on Amazon.</span></div>
+              <a class="buy-btn" href="https://www.amazon.com/s?k=WEN+56380i+inverter+generator&amp;tag=shedworks-20" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Dual-fuel generator</span></div>
+            <div class="card-body">
+              <h4>DuroMax XP12000EH<span class="badge">Whole-home portable</span></h4>
+              <p class="model">DuroMax XP series · dual-fuel open-frame generator</p>
+              <p class="bestfor">Best for: big loads, well pumps, whole-home portable</p>
+              <p class="why"><b>Why we like it:</b> When the job is big, buy big: 9,500 running watts and 12,000 starting watts on gas (9,025 running on propane), 120/240V output with a 50-amp outlet, electric start, and transfer-switch ready. This is the one that runs a well pump, a freezer, and the lights at the same time. The trade-offs are real — 224 pounds, loud next to an inverter, and no CO shutoff listed — so it lives outside, far from the house, and never in the garage.</p>
+              <div class="price"><b>~$1,199</b><span>Approx. price, Nov 2026 — checked Nov 22, 2026. Re-check on Amazon.</span></div>
+              <a class="buy-btn" href="https://www.amazon.com/s?k=DuroMax+XP12000EH+generator&amp;tag=shedworks-20" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+            </div>
+          </div>
+        </div>
+        <div class="cols">
+          <div class="panel">
+            <h4>Running watts vs. starting watts</h4>
+            <ul>
+              <li><b>Running watts</b> are what the generator sustains — the steady load.</li>
+              <li><b>Starting watts</b> are the 2–3 second surge when a motor starts. A fridge compressor or well pump can surge to 3–4× its running watts.</li>
+              <li>Size by starting watts: add the starting watts of the biggest motor to the running watts of everything else running at the same time.</li>
+              <li><b>Worked example — fridge + lights:</b> fridge 150W running / ~600W starting + LED lights 60W + phone chargers 20W + chest freezer 100W running / ~500W starting = ~330W running, ~1,180W starting. A 2,200W inverter generator covers it with room to spare.</li>
+              <li><b>Worked example — well pump:</b> a 1 HP well pump draws ~1,000W running and surges to 3,000–4,000W starting. Add a fridge and lights and you need ~4,500W of starting power — the 4,500W inverter class at minimum, or the 12,000W DuroMax above for comfort.</li>
+            </ul>
+          </div>
+          <div class="panel">
+            <h4>Inverter vs. conventional</h4>
+            <ul>
+              <li><b>Inverter generators</b> vary engine speed with load, so they sip fuel, run quiet (48–61 dBA), and make clean sine-wave power under 3% THD — safe for laptops, TVs, and solar inverters.</li>
+              <li><b>Conventional open-frame generators</b> run at a fixed 3,600 RPM: louder, thirstier, and their voltage and frequency wander as the load changes. Fine for heaters, saws, and incandescent lights — rough on sensitive electronics.</li>
+              <li>For a house, the inverter is the default pick. Buy conventional only when you need big watts cheap and the loads are dumb.</li>
+              <li><b>Parallel capability:</b> most inverters in this guide pair with a second identical unit (or a companion model) through a parallel kit, doubling output. It is the cheapest way to grow from 2,200W to 3,600W without selling the first machine.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="verdict"><b>The verdict</b><p>Size by starting watts, not the headline number. For most homes the 4,500W inverter class is the sweet spot — it starts a well pump or a big freezer and still sips fuel. Buy the smallest inverter that covers your biggest motor plus the essentials, keep a conventional only for big dumb loads, and never run any of them in the garage — that rule has no exceptions.</p></div>
+        <div class="panel">
+          <h4>Pairing a generator with solar batteries: do you need a chargeverter?</h4>
+          <p>If you run a solar + battery system like mine — 48V, 25 kWh across five 100Ah server-rack batteries behind an EG4 12000XP — the generator question changes. You are not running loads off the generator. You are refilling the bank, and the bank is what runs the house. That is what a chargeverter is for.</p>
+          <p>A chargeverter is an AC-to-DC battery charger that sits between the generator and the battery bank. Generator AC goes in, clean DC charging comes out, straight to the bank — and the inverter never sees the generator’s power at all. That matters because a conventional generator’s voltage and frequency wander as the load changes, and the electronics in a modern solar inverter are sensitive to that. Feed one straight into the inverter’s AC input and it may refuse to charge, throw faults, or take damage over time. The chargeverter takes the dirty power so the inverter doesn’t have to.</p>
+          <p><b>When you need one:</b> you have a 24V or 48V solar battery bank and a conventional or open-frame generator; you want to refill a big bank fast during a multi-day outage (a 100-amp chargeverter pushes about 5 kW into the bank); or your inverter’s generator input is fussy about power quality.</p>
+          <p><b>When you don’t:</b> your generator is an inverter generator — it already makes clean, stable power and works directly with solar inverters, no chargeverter needed. That is one more reason the four inverter picks above are the right pairing for a solar home. You also don’t need one if you have no battery bank at all — just run the loads straight off the generator.</p>
+          <p><b>Size it to the generator:</b> a 100-amp chargeverter at 240V pulls up to about 5.8 kW, so it wants a 6,500W-class generator at full tilt — but both picks below let you dial the charge current down to match a smaller machine. On 120V input the output is lower (the ECO-WORTHY gives up to 60A, the EG4 up to 50A), so full power needs a 240V outlet.</p>
+          <div class="cards">
+            <div class="card">
+              <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Chargeverter</span></div>
+              <div class="card-body">
+                <h4>ECO-WORTHY EC100 48V 100A<span class="badge">Josh’s pick · value</span></h4>
+                <p class="model">ECO-WORTHY EC series · 48V battery charger</p>
+                <p class="bestfor">Best for: 48V solar banks on a budget</p>
+                <p class="why"><b>Why we like it:</b> I run ECO-WORTHY chargeverters on my own system and they work well, especially for the price. 100 amps of charging, a wide 90–260V AC input that handles dirty generator power, adjustable current from 2–100A, and an RJ11 port that auto-starts and stops the generator. The value pick in this category by a clear margin.</p>
+                <div class="price"><b>~$480–$550</b><span>Approx. price, Nov 2026 — checked Nov 22, 2026. Re-check on Amazon.</span></div>
+                <a class="buy-btn" href="https://www.amazon.com/s?k=ECO-WORTHY+EC100+48V+100A+battery+charger&amp;tag=shedworks-20" target="_blank" rel="nofollow sponsored noopener">Buy on Amazon</a>
+              </div>
+            </div>
+            <div class="card">
+              <div class="card-media" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M13 2L4 14h6l-1 8 9-12h-6z"/></svg><span>Chargeverter</span></div>
+              <div class="card-body">
+                <h4>EG4 Chargeverter-GC 48V 100A<span class="badge">Premium pick</span></h4>
+                <p class="model">EG4 Electronics · 48V battery charger</p>
+                <p class="bestfor">Best for: EG4 systems, buy-it-once builds</p>
+                <p class="why"><b>Why we like it:</b> The premium pick. I love EG4 gear — it is what my 12000XP inverter is — and the Chargeverter is the matching charger: 100 amps, 5,120W, 120/240V input, auto generator start, and a 3-year warranty. It costs more than the ECO-WORTHY, and you pay for the build and the ecosystem.</p>
+                <div class="price"><b>~$530–$700</b><span>Approx. price, Nov 2026 — sold through solar suppliers, not Amazon.</span></div>
+                <p class="pick-note" style="margin:.6rem 0 0"><b>Not sold on Amazon.</b> Buy it from a solar supplier — Signature Solar, Current Connected, or SanTan Solar.</p>
+              </div>
+            </div>
+          </div>
+          <p class="price-note">The EG4 Chargeverter is 48V only — it will not charge a 24V bank. If you run 24V, the same job needs a 24V AC-to-DC charger sized to your bank (a 40-amp charger suits a 100Ah bank), matched to your battery chemistry: a LiFePO4 charger is not a lead-acid charger.</p>
+        </div>
+        <button class="more-btn" aria-expanded="false" aria-controls="more-generator">What to look for &amp; FAQs <span class="chev" aria-hidden="true">▾</span></button>
+        <div class="more" id="more-generator">
+          <h4>What actually matters</h4>
+          <p><b>Fuel and runtime.</b> Gasoline goes stale in months — use ethanol-free gas with stabilizer and rotate the can every season, or run dual-fuel on propane, which stores indefinitely. A 20-pound propane tank runs a 4,500W inverter for up to 21 hours at a quarter load.</p>
+          <p><b>Noise.</b> Decibels are measured at 23–25 feet: 52 dBA is conversation level, 61 dBA is a normal voice raised, 74 dBA is a loud vacuum. Every 10 dBA roughly doubles the perceived loudness — the gap between an inverter and an open-frame is the gap between a conversation and a lawn mower.</p>
+          <p><b>Parallel capability.</b> Most inverters in this guide pair with a second identical unit (or a companion model) through a parallel kit, doubling output. It is the cheapest way to grow from 2,200W to 3,600W without selling the first machine.</p>
+          <p><b>Carbon monoxide — the rule that matters most.</b> Never run a generator in the garage, basement, porch, or near an open window or door — not even with the door open. Twenty feet from the house, exhaust pointed away, and a battery CO alarm in the house. CO is odorless, and the garage is where people die from it.</p>
+          <p><b>Never backfeed.</b> Do not plug a generator into a wall outlet to “feed the house” — it energizes the lines outside and can kill a lineman. Run extension cords to the loads, or have an electrician install a transfer switch or interlock kit.</p>
+          <p><b>Break-in and maintenance.</b> Change the oil after the first 20–25 hours, then per the manual. Run the machine under load for 20 minutes every month or two so the carburetor stays clean and you know it starts.</p>
+          <h4>FAQs</h4>
+          <div class="faq-item"><b>Power station or gas generator?</b>Station for quiet, indoor-safe, zero-maintenance backup of essentials — see Guide 03. Gas generator for multi-day outages and big loads like a well pump, at the cost of noise, fuel, and never running it in the garage.</div>
+          <div class="faq-item"><b>Can a generator run my whole house?</b>A portable generator plus a transfer switch runs your essential circuits — fridge, freezer, well pump, some lights. True whole-house backup is a standby generator or a fixed solar + battery system like mine: 48V, 25 kWh, and a 12,000W-class inverter.</div>
+          <div class="faq-item"><b>Can I plug a generator into my solar inverter?</b>Only if the inverter accepts it. A conventional generator’s wandering voltage is rough on sensitive inverter electronics — that is exactly what the chargeverter section above is for. An inverter generator’s clean power works directly.</div>
+          <div class="faq-item"><b>How much fuel should I keep?</b>A 5-gallon can is roughly a day of moderate-load runtime on a 4,500W inverter. Keep two cans rotated, or a 20-pound propane tank if your generator is dual-fuel — propane never goes stale.</div>
+        </div>
+        <p class="price-note">Prices are approximate November 2026 ranges — check the current price before buying.</p>
+      </div>
+    </article>
+
+    <!-- GUIDE 5: ECHO BATTERY YARD TOOLS -->
     <article class="guide" id="best-echo-battery-yard-tools" data-cat="lawn">
       <div class="guide-head">
-        <p class="guide-kicker">Lawn &amp; Garden · Guide 04</p>
+        <p class="guide-kicker">Lawn &amp; Garden · Guide 05</p>
         <h3>Best ECHO battery yard tools — the lineup I'd actually recommend</h3>
         <p class="intro">This one isn't a research roundup. I own the ECHO battery yard tools and the chainsaw lineup, I use them around my own place in Pekin, and I'd recommend them for sure. ECHO built its name on gas equipment that pros actually run — the 56V eFORCE battery line is that same thinking without the gas can, the pull cord, or the mixing. Here's the lineup I'd buy again, in the order I'd buy it.</p>
         <p class="intro"><b>One battery system covers the whole yard.</b> Every tool below runs on the same ECHO 56V eFORCE battery platform — the chainsaw, trimmer, blower, hedge trimmer and mower all swap the same 56V packs. Buy two or three batteries once and they feed everything, same lesson as every other guide on this site: the battery is the system, so buy the battery once.</p>
@@ -799,7 +943,7 @@
 
     <article class="guide" id="best-battery-powered-tools-with-battery-and-charger" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 05</p>
+        <p class="guide-kicker">Tools · Guide 06</p>
         <h3>Best battery-powered tools that come with battery and charger</h3>
         <p class="intro">Every pick in this guide is a <b>kit</b>: the tool plus at least one battery and a charger in the box — no bare tools dressed up as kits. Why kits first? A battery and charger bought separately can cost as much as the tool itself. Pick your platform first, then pick the kit — and if you already own batteries on a platform, buy that platform's bare tool instead.</p>
         <p class="intro">Fifty kits across twelve sections: drills, combo kits, saws, yard tools, mowers, pressure washers, shop vacs and the battery starter kits that are the cheapest way onto a platform.</p>
@@ -1490,7 +1634,7 @@
 
     <article class="guide" id="best-hand-tool-sets" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 06</p>
+        <p class="guide-kicker">Tools · Guide 07</p>
         <h3>Best hand tool sets for a home garage</h3>
         <p class="intro">Power tools get the attention, but hand tools do most of the work in a home garage. A socket set, a wrench set, a pliers set and a screwdriver set will handle nearly everything that is not a cut or a hole — and unlike a battery platform, a good hand tool set never goes obsolete. The trick is buying a set instead of single tools one emergency at a time. A set costs less per tool, every piece has a home in the case, and you stop discovering at 9 PM that you own three 10 mm sockets and no 12 mm.</p>
         <p class="intro">This guide is a research roundup, not a hands-on test. Picks are drawn from 2026 roundups and retailer listings checked in November 2026. Where roundups disagreed — most often on exact prices — the range shown is the honest spread, and anything we could not confirm as a complete set is listed separately at the end rather than presented as a pick.</p>
@@ -2031,7 +2175,7 @@
 
     <article class="guide" id="best-gas-chainsaws" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 07</p>
+        <p class="guide-kicker">Tools · Guide 08</p>
         <h3>Best gas chainsaws for a homeowner</h3>
         <p class="intro">A battery saw is the easy choice for quick cuts — Josh runs the ECHO 56V eFORCE lineup himself and recommends it in our ECHO battery yard tools guide. But when the wood pile is big, the trees are down, and the work runs all day, a gas saw still earns its keep: no battery to charge, no runtime clock, and the power to pull a 20-inch bar through hardwood without slowing down. This guide is for the homeowner who heats with wood, clears storm damage, or fells a few trees a year — not for professional fellers, who need a pro saw and pro training.</p>
         <p class="price-note">As an Amazon Associate, ShedWorks earns from qualifying purchases.</p>
@@ -2182,7 +2326,7 @@
 
     <article class="guide" id="best-portable-sawmills-log-splitters-wood-chippers" data-cat="lawn">
       <div class="guide-head">
-        <p class="guide-kicker">Lawn &amp;amp; Garden · Guide 08</p>
+        <p class="guide-kicker">Lawn &amp;amp; Garden · Guide 09</p>
         <h3>Best portable sawmills, log splitters and wood chippers for a homestead</h3>
         <p class="intro">This is the guide for turning the trees on your own land into lumber, firewood and mulch — instead of paying someone else to haul them away. These are big machines with big prices: a chainsaw mill attachment starts under $100, a decent electric log splitter is $300–$600, and a real bandsaw mill runs $2,500–$10,000 or more. The commission on one sawmill sale is worth more than a month of drill sales, but the audience is small and the buying decision is slow — so this guide is honest about what is actually sold on Amazon, what you have to buy direct from the manufacturer, and what ships freight.</p>
         <p class="intro">Woodland Mills, Norwood and Wood-Mizer bandsaw mills are NOT sold on Amazon — see the 'worth knowing about' section below. Prices are approximate November 2026 ranges.</p>
@@ -2421,7 +2565,7 @@
 
     <article class="guide" id="best-skid-steer-tractor-attachments" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 09</p>
+        <p class="guide-kicker">Tools · Guide 10</p>
         <h3>Best skid steer and tractor attachments</h3>
         <p class="intro">A skid steer or a compact tractor is only as useful as what you hang on the front - or the back. The machine is the expensive part. The attachments are where the work happens, and they are also where the affiliate money is: grapple buckets, pallet forks, augers and 3-point implements are all sold on Amazon in the $125-$5,000 range, they ship freight to your door, and at 3% a single grapple bucket sale pays $60-$90. This guide only lists attachments we could verify as actually listed on Amazon in November 2026. If we could not confirm the Amazon listing, it is not a pick.</p>
         <p class="intro">One thing before the picks: fitment matters more than brand here. An attachment that does not match your machine's mount, hitch category, or hydraulic flow is a very expensive paperweight. There is a full "will it fit my machine?" section after the picks - read it before you order.</p>
@@ -2765,7 +2909,7 @@
 
     <article class="guide" id="compact-tractors-mini-excavators-mini-skid-steers" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 10</p>
+        <p class="guide-kicker">Tools · Guide 11</p>
         <h3>Compact tractors, mini excavators and mini skid steers</h3>
         <p class="intro">This guide is different from the rest of ShedWorks, and it says so up front: Josh has not owned or run most of these machines, and most of them cannot be bought on Amazon at all. There is one exception, and it is the first pick in this guide: Josh owns a Yanmar SA424, loves it, and recommends it to everyone - that pick is written in his voice, because it is his machine. A $35,000 mini excavator is a dealer purchase - financing, delivery, service, warranty - not a click-to-cart item. So why write the guide? Because the person researching a $35,000 machine is the same person who buys a $2,500 grapple bucket, a $3,000 tiller, and $800 of pallet forks. This guide earns its keep by teaching the buyer what to look for, and by sending them to Guide 1 to outfit the machine they buy. Every price below is an approximate November 2026 range from dealer listings, manufacturer list prices, or auction results - re-check with a dealer before you buy, because nobody's out-the-door price matches the brochure.</p>
         <p class="intro">The one exception: small import machines. AGT sells 1-ton mini excavators and mini skid steers through Amazon in the $5,000-$8,000 range, freight-delivered. They are real, they are cheap, and they are not a Kubota. This guide covers them honestly, in their own section.</p>
@@ -3025,7 +3169,7 @@
 
     <article class="guide" id="chainsaw-safety-gear-firewood-tools" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 11</p>
+        <p class="guide-kicker">Tools · Guide 12</p>
         <h3>Chainsaw safety gear and firewood tools</h3>
         <p class="intro">A chainsaw does not care how experienced you are. The chain moves at around 45 mph, and the difference between a bad day and a story you tell later is usually a $70 pair of chaps and a helmet you bothered to put on. This guide is the full kit: what to wear before you pull the starter cord, and the hand tools that move and split the wood once it is down — 41 picks across nine sections.</p>
         <p class="intro">Everything here is sold on Amazon, with the ratings that actually matter — NRR for hearing, ANSI Z87.1 for eyes, UL/ASTM F1897 for chaps, NIOSH N95/P100 for lungs.</p>
@@ -3580,7 +3724,7 @@
 
     <article class="guide" id="best-welders-welding-gear" data-cat="tools">
       <div class="guide-head">
-        <p class="guide-kicker">Tools · Guide 12</p>
+        <p class="guide-kicker">Tools · Guide 13</p>
         <h3>Best welders and welding gear for a home garage</h3>
         <p class="intro">One brand in this guide is a first-hand recommendation, not a research pick. Josh runs Hobart welders himself, and his words are: <b>“I run Hobart welders myself — they work great and they don't cost what a Miller does.”</b> The Hobart Handler 140, Handler 190, Handler 210 MVP and Multi-Handler 200 below are his picks — he does a lot of welding and has manufactured his own log splitter and some of his own equipment. Everything else here is a research roundup: specs, prices and reviews checked, but not run in Josh's shop.</p>
         <p class="intro">Forty-five picks across eleven sections: MIG, stick, TIG and multi-process welders, plasma cutters, helmets, gloves and jackets, wire and rods, tables and carts, grinders, and the shop extras that make welding safer.</p>
@@ -4369,18 +4513,34 @@
     });
   });
 
-  /* Category filter */
+  /* Category filter + search (combined, modeled on Camp & Field) */
   var chips = document.querySelectorAll(".chip[data-filter]");
   var guides = document.querySelectorAll(".guide[data-cat]");
+  var searchInput = document.getElementById("q");
+  var noResults = document.getElementById("noresults");
+  var activeFilter = "all";
+  function applyFilters(){
+    var q = searchInput ? searchInput.value.trim().toLowerCase() : "";
+    var visible = 0;
+    guides.forEach(function(g){
+      var catOk = activeFilter === "all" || g.getAttribute("data-cat") === activeFilter;
+      var textOk = !q || (g.textContent || "").toLowerCase().indexOf(q) !== -1;
+      var show = catOk && textOk;
+      g.style.display = show ? "" : "none";
+      if(show) visible++;
+    });
+    if(noResults) noResults.hidden = visible !== 0;
+  }
   chips.forEach(function(chip){
     chip.addEventListener("click", function(){
-      var f = chip.getAttribute("data-filter");
+      activeFilter = chip.getAttribute("data-filter");
       chips.forEach(function(c){ c.setAttribute("aria-pressed", c === chip ? "true" : "false"); });
-      guides.forEach(function(g){
-        g.style.display = (f === "all" || g.getAttribute("data-cat") === f) ? "" : "none";
-      });
+      applyFilters();
     });
   });
+  if(searchInput){
+    searchInput.addEventListener("input", applyFilters);
+  }
 
   /* Power station sizer */
   var appliance = document.getElementById("appliance");
